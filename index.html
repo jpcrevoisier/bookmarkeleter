@@ -1,51 +1,49 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252"><meta name="viewport" content="width=device-width"><title>data:…</title><link rel="stylesheet" type="text/css" href="index_fichiers/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4" contextmenu="actions"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
-<span id="line2"></span></span><span>&lt;<span class="start-tag">html</span>&gt;</span><span>
-<span id="line3"></span>	</span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
-<span id="line4"></span>	</span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">viewport</a>" <span class="attribute-name">content</span>="<a class="attribute-value">width=device-width, initial-scale=1.0</a>"&gt;</span><span>
-<span id="line5"></span>	</span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">charset</span>="<a class="attribute-value">UTF-8</a>"&gt;</span><span>
-<span id="line6"></span>	</span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>BookMarkBuilder</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
-<span id="line7"></span>	</span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line8"></span>function buildLink(node)
-<span id="line9"></span>{
-<span id="line10"></span>	metaDomEditor=document.getElementById('metaDomEditor');
-<span id="line11"></span>	metaDomValue='';
-<span id="line12"></span>	while(metaDomValue!=metaDomEditor.value.toString().replace(/\n\n/g, '\n').replace(/\n\t\n/g, '\n'))
-<span id="line13"></span>	{
-<span id="line14"></span>		metaDomValue=metaDomEditor.value.toString().replace(/\n\n/g, '\n').replace(/\n\t\n/g, '\n');
-<span id="line15"></span>	}
-<span id="line16"></span>	metaDomValue=metaDomEditor.value.toString().replace(/\n\t\n/g, '\n').replace(/\n\n/g, '\n');
-<span id="line17"></span>	node.href="javascript:void function(){"+encodeURI(metaDomValue)+"}();";
-<span id="line18"></span>	node.innerText=document.querySelector('#title').value;
-<span id="line19"></span>	return node.href;
-<span id="line20"></span>}
-<span id="line21"></span>document.addEventListener('DOMContentLoaded', function(){
-<span id="line22"></span>	document.getElementById('metaDomEditor').addEventListener('keydown', function(event){
-<span id="line23"></span>		if(event.key=='s' &amp;&amp; event.ctrlKey) // ctrl+s
-<span id="line24"></span>		{
-<span id="line25"></span>			event.preventDefault();
-<span id="line26"></span>			window.location=buildLink(document.getElementById('b64Link'));
-<span id="line27"></span>		}
-<span id="line28"></span>		else if(event.key=='Tab') // tabulation
-<span id="line29"></span>		{
-<span id="line30"></span>			event.preventDefault();
-<span id="line31"></span>			var s = event.target.selectionStart;
-<span id="line32"></span>			event.target.value = event.target.value.substring(0,event.target.selectionStart) + "\t" + event.target.value.substring(event.target.selectionEnd);
-<span id="line33"></span>			event.target.selectionEnd = s+1; 
-<span id="line34"></span>		}
-<span id="line35"></span>	});
-<span id="line36"></span>}, false);
-<span id="line37"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line38"></span></span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
-<span id="line39"></span></span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
-<span id="line40"></span>	</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">metaDiv</a>"&gt;</span><span>
-<span id="line41"></span>		</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">metaDivContent</a>"&gt;</span><span>
-<span id="line42"></span>			</span><span>&lt;<span class="start-tag">br</span>&gt;</span><span>
-<span id="line43"></span>			</span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">type</span>="<a class="attribute-value">text</a>" <span class="attribute-name">name</span>="<a class="attribute-value">title</a>" <span class="attribute-name">id</span>="<a class="attribute-value">title</a>" <span class="attribute-name">value</span>="<a class="attribute-value">Bookmarklet</a>"<span>/</span>&gt;</span><span></span><span>&lt;<span class="start-tag">br</span><span>/</span>&gt;</span><span>
-<span id="line44"></span>			</span><span>&lt;<span class="start-tag">textarea</span> <span class="attribute-name">id</span>="<a class="attribute-value">metaDomEditor</a>" <span class="attribute-name">style</span>="<a class="attribute-value">width: 100%; height: 20em; overflow: auto;</a>" <span class="attribute-name">wrap</span>="<a class="attribute-value">off</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">textarea</span>&gt;</span><span>
-<span id="line45"></span>			</span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgoJPGhlYWQ+Cgk8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+Cgk8bWV0YSBjaGFyc2V0PSJVVEYtOCI+Cgk8dGl0bGU+Qm9va01hcmtCdWlsZGVyPC90aXRsZT4KCTxzY3JpcHQ+CmZ1bmN0aW9uIGJ1aWxkTGluayhub2RlKQp7CgltZXRhRG9tRWRpdG9yPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXRhRG9tRWRpdG9yJyk7CgltZXRhRG9tVmFsdWU9Jyc7Cgl3aGlsZShtZXRhRG9tVmFsdWUhPW1ldGFEb21FZGl0b3IudmFsdWUudG9TdHJpbmcoKS5yZXBsYWNlKC9cblxuL2csICdcbicpLnJlcGxhY2UoL1xuXHRcbi9nLCAnXG4nKSkKCXsKCQltZXRhRG9tVmFsdWU9bWV0YURvbUVkaXRvci52YWx1ZS50b1N0cmluZygpLnJlcGxhY2UoL1xuXG4vZywgJ1xuJykucmVwbGFjZSgvXG5cdFxuL2csICdcbicpOwoJfQoJbWV0YURvbVZhbHVlPW1ldGFEb21FZGl0b3IudmFsdWUudG9TdHJpbmcoKS5yZXBsYWNlKC9cblx0XG4vZywgJ1xuJykucmVwbGFjZSgvXG5cbi9nLCAnXG4nKTsKCW5vZGUuaHJlZj0iamF2YXNjcmlwdDp2b2lkIGZ1bmN0aW9uKCl7IitlbmNvZGVVUkkobWV0YURvbVZhbHVlKSsifSgpOyI7Cglub2RlLmlubmVyVGV4dD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjdGl0bGUnKS52YWx1ZTsKCXJldHVybiBub2RlLmhyZWY7Cn0KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKCl7Cglkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbWV0YURvbUVkaXRvcicpLmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLCBmdW5jdGlvbihldmVudCl7CgkJaWYoZXZlbnQua2V5PT0ncycgJiYgZXZlbnQuY3RybEtleSkgLy8gY3RybCtzCgkJewoJCQlldmVudC5wcmV2ZW50RGVmYXVsdCgpOwoJCQl3aW5kb3cubG9jYXRpb249YnVpbGRMaW5rKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdiNjRMaW5rJykpOwoJCX0KCQllbHNlIGlmKGV2ZW50LmtleT09J1RhYicpIC8vIHRhYnVsYXRpb24KCQl7CgkJCWV2ZW50LnByZXZlbnREZWZhdWx0KCk7CgkJCXZhciBzID0gZXZlbnQudGFyZ2V0LnNlbGVjdGlvblN0YXJ0OwoJCQlldmVudC50YXJnZXQudmFsdWUgPSBldmVudC50YXJnZXQudmFsdWUuc3Vic3RyaW5nKDAsZXZlbnQudGFyZ2V0LnNlbGVjdGlvblN0YXJ0KSArICJcdCIgKyBldmVudC50YXJnZXQudmFsdWUuc3Vic3RyaW5nKGV2ZW50LnRhcmdldC5zZWxlY3Rpb25FbmQpOwoJCQlldmVudC50YXJnZXQuc2VsZWN0aW9uRW5kID0gcysxOyAKCQl9Cgl9KTsKfSwgZmFsc2UpOwo8L3NjcmlwdD4KPC9oZWFkPgo8Ym9keT4KCTxkaXYgaWQ9Im1ldGFEaXYiPgoJCTxkaXYgaWQ9Im1ldGFEaXZDb250ZW50Ij4KCQkJPGJyPgoJCQk8aW5wdXQgdHlwZT0idGV4dCIgbmFtZT0idGl0bGUiIGlkPSJ0aXRsZSIgdmFsdWU9IkJvb2ttYXJrbGV0Ii8+PGJyLz4KCQkJPHRleHRhcmVhIGlkPSJtZXRhRG9tRWRpdG9yIiBzdHlsZT0id2lkdGg6IDEwMCU7IGhlaWdodDogMjBlbTsgb3ZlcmZsb3c6IGF1dG87IiB3cmFwPSJvZmYiPjwvdGV4dGFyZWE+CgkJCTxhIGhyZWY9IiMiIGlkPSJiNjRMaW5rIiB0YXJnZXQ9Im5ld1RhYiIgb25tb3VzZW92ZXI9ImJ1aWxkTGluayh0aGlzKTsiPkJvb2tNYXJrTGV0PC9hPgoJCTwvZGl2PgoJPC9kaXY+CjwvYm9keT4KPC9odG1sPg==#">#</a>" <span class="attribute-name">id</span>="<a class="attribute-value">b64Link</a>" <span class="attribute-name">target</span>="<a class="attribute-value">newTab</a>" <span class="attribute-name">onmouseover</span>="<a class="attribute-value">buildLink(this);</a>"&gt;</span><span>BookMarkLet</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
-<span id="line46"></span>		</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line47"></span>	</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line48"></span></span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
-<span id="line49"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span></span></pre><menu type="context" id="actions"><menuitem id="goToLine" label="Aller à la ligne…" accesskey="l"></menuitem><menuitem id="wrapLongLines" label="Retour à la ligne automatique" type="checkbox"></menuitem><menuitem id="highlightSyntax" label="Coloration syntaxique" type="checkbox" checked="true"></menuitem></menu></body></html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>BookMarkBuilder</title>
+	<script>
+function buildLink(node)
+{
+	metaDomEditor=document.getElementById('metaDomEditor');
+	metaDomValue='';
+	while(metaDomValue!=metaDomEditor.value.toString().replace(/\n\n/g, '\n').replace(/\n\t\n/g, '\n'))
+	{
+		metaDomValue=metaDomEditor.value.toString().replace(/\n\n/g, '\n').replace(/\n\t\n/g, '\n');
+	}
+	metaDomValue=metaDomEditor.value.toString().replace(/\n\t\n/g, '\n').replace(/\n\n/g, '\n');
+	node.href="javascript:void function(){"+encodeURI(metaDomValue)+"}();";
+	node.innerText=document.querySelector('#title').value;
+	return node.href;
+}
+document.addEventListener('DOMContentLoaded', function(){
+	document.getElementById('metaDomEditor').addEventListener('keydown', function(event){
+		if(event.key=='s' && event.ctrlKey) // ctrl+s
+		{
+			event.preventDefault();
+			window.location=buildLink(document.getElementById('b64Link'));
+		}
+		else if(event.key=='Tab') // tabulation
+		{
+			event.preventDefault();
+			var s = event.target.selectionStart;
+			event.target.value = event.target.value.substring(0,event.target.selectionStart) + "\t" + event.target.value.substring(event.target.selectionEnd);
+			event.target.selectionEnd = s+1; 
+		}
+	});
+}, false);
+</script>
+</head>
+<body>
+	<div id="metaDiv">
+		<div id="metaDivContent">
+			<br>
+			<input type="text" name="title" id="title" value="Bookmarklet"/><br/>
+			<textarea id="metaDomEditor" style="width: 100%; height: 20em; overflow: auto;" wrap="off"></textarea>
+			<a href="#" id="b64Link" target="newTab" onmouseover="buildLink(this);">BookMarkLet</a>
+		</div>
+	</div>
+</body>
+</html>
